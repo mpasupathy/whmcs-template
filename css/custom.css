@@ -4,6 +4,7 @@
 
     Any custom styling you want to apply should be
     defined here.
+
     
     ## Geeks On Tap ##
 
@@ -704,3 +705,4 @@ section#header .logo img{
 #Primary_Navbar-Announcements, #Primary_Navbar-Knowledgebase, #Primary_Navbar-Support, #Primary_Navbar-Open_Ticket, #Primary_Navbar-Network_Status{
     display:none;
 }
+

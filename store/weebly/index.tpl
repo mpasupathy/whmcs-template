@@ -1,4 +1,4 @@
-<link href="{$WEB_ROOT}/templates/six/store/css/style.css" rel="stylesheet">
+<link href="{$WEB_ROOT}/templates/{$template}/store/css/style.css" rel="stylesheet">
 
 <div class="landing-page weebly">
 
@@ -129,7 +129,7 @@
                     <div class="col-sm-3">
                         <form method="post" action="">
                             <select name="currency" class="form-control currency-selector" onchange="submit()">
-                                <option>Change Currency ({$activeCurrency.prefix} {$activeCurrency.code})</option>
+                                <option>{lang key="changeCurrency"} ({$activeCurrency.prefix} {$activeCurrency.code})</option>
                                 {foreach $currencies as $currency}
                                     <option value="{$currency['id']}">{$currency['prefix']} {$currency['code']}</option>
                                 {/foreach}
@@ -244,4 +244,4 @@
 
 </div>
 
-<script src="{$WEB_ROOT}/templates/six/store/weebly/master.js"></script>
+<script src="{$WEB_ROOT}/templates/{$template}/store/weebly/master.js"></script>

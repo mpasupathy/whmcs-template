@@ -1,4 +1,4 @@
-<link href="{$WEB_ROOT}/templates/six/store/css/style.css" rel="stylesheet">
+<link href="{$WEB_ROOT}/templates/{$template}/store/css/style.css" rel="stylesheet">
 
 <div class="container">
     <div class="row">
@@ -47,7 +47,7 @@
                                                 {/foreach}
                                             </select>
                                             <button type="submit" class="btn btn-success btn-block">
-                                                Upgrade to {$product->name} for {$product->pricing()->monthly()->breakdownPrice()}
+                                                Upgrade to {$product->name} for {$product->pricing()->first()->breakdownPrice()}
                                             </button>
                                         </form>
                                     {/if}

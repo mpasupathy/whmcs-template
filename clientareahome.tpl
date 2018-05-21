@@ -36,7 +36,6 @@
                 </a>
             </div>
         {/if}
-<!--
         <div class="col-sm-3 col-xs-6 tile" onclick="window.location='supporttickets.php'">
             <a href="supporttickets.php">
                 <div class="icon"><i class="fa fa-comments"></i></div>
@@ -45,7 +44,6 @@
                 <div class="highlight bg-color-red"></div>
             </a>
         </div>
-        -->
         <div class="col-sm-3 col-xs-6 tile" onclick="window.location='clientarea.php?action=invoices'">
             <a href="clientarea.php?action=invoices">
                 <div class="icon"><i class="fa fa-credit-card"></i></div>
@@ -74,7 +72,7 @@
 
 <div class="client-home-panels">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
 
             {function name=outputHomePanels}
                 <div menuItemName="{$item->getName()}" class="panel panel-default panel-accent-{$item->getExtra('color')}{if $item->getClass()} {$item->getClass()}{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
@@ -132,7 +130,6 @@
             {/foreach}
 
         </div>
-<!--
         <div class="col-sm-6">
 
             {foreach $panels as $item}
@@ -142,6 +139,5 @@
             {/foreach}
 
         </div>
--->
     </div>
 </div>

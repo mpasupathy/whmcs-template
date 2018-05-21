@@ -142,11 +142,14 @@
                     </div>
                 </div>
             </fieldset>
-
+            {if $hasLinkedProvidersEnabled}
+                <h3>Linked Accounts</h3>
+                {include file="$template/includes/linkedaccounts.tpl" linkContext="linktable" }
+            {/if}
         </div>
 
         <div class="form-group">
-            <label class="control-label">{$LANG.clientareacontactsemails}</label>
+            <h3>{$LANG.clientareacontactsemails}</h3>
             <div class="controls checkbox">
                 <label>
                     <input type="checkbox" name="generalemails" id="generalemails" value="1"{if $generalemails} checked{/if} />
@@ -174,7 +177,7 @@
         <div class="form-group text-center">
             <input class="btn btn-primary" type="submit" name="save" value="{$LANG.clientareasavechanges}" />
             <input class="btn btn-default" type="reset" value="{$LANG.cancel}" />
-            <input class="btn btn-danger" type="button" value="{$LANG.clientareadeletecontact}" onclick="deleteContact('{$LANG.clientareadeletecontactareyousure}', {$contactid})" />
+            <a class="btn btn-danger" data-toggle="confirmation" data-btn-ok-label="{lang key='yes'}" data-btn-ok-icon="fa fa-check" data-btn-ok-class="btn-success" data-btn-cancel-label="{lang key='no'}" data-btn-cancel-icon="fa fa-ban" data-btn-cancel-class="btn-default" data-title="{lang key='clientareadeletecontact'}" data-content="{lang key='clientareadeletecontactareyousure'}" data-popout="true" href="clientarea.php?action=contacts&delete=true&id={$contactid}&token={$token}">{lang key='clientareadeletecontact'}</a>
         </div>
 
     </form>
@@ -183,3 +186,36 @@
     {include file="$template/clientareaaddcontact.tpl"}
 
 {/if}
+
+<script type="text/javascript">
+    jQuery(document).ready( function ()
+    {
+        jQuery('.removeAccountLink').click(function (e) {
+            e.preventDefault();
+            var authUserID = jQuery(this).data('authid');
+            swal(
+                {
+                    title: "Are you sure?",
+                    text: "This permanently unlinks the authorized account.",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, unlink it!",
+                    closeOnConfirm: false
+                },
+                function(){
+                    jQuery.post('{routePath('auth-manage-client-delete')}' + authUserID,
+                        {
+                            'token': '" . generate_token("plain") . "'
+                        }).done(function(data) {
+                        if (data.status == 'success') {
+                            jQuery('#remoteAuth' + authUserID).remove();
+                            swal("Unlinked!", data.message, "success");
+                        } else {
+                            swal("Error!", data.message, "error");
+                        }
+                    });
+                });
+        });
+    });
+</script>

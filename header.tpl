@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="favicon.ico" />
     <meta charset="{$charset}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
 
     {include file="$template/includes/head.tpl"}
 
     {$headoutput}
+
 </head>
-<body>
+<body data-phone-cc-input="{$phoneNumberInputStyle}">
 
 {$headeroutput}
 
@@ -61,12 +60,7 @@
                     </div>
                 </li>
                 <li class="primary-action">
-                    <a href="https://www.geeksontap.com.au/support/" class="btn btn-action" target="_blank">
-                        Support
-                    </a>
-                </li>
-                <li class="primary-action">
-                    <a href="{$WEB_ROOT}/logout.php" class="btn btn-action">
+                    <a href="{$WEB_ROOT}/logout.php" class="btn">
                         {$LANG.clientareanavlogout}
                     </a>
                 </li>
@@ -80,7 +74,7 @@
                     </li>
                 {/if}
                 <li class="primary-action">
-                    <a href="{$WEB_ROOT}/cart.php?a=view" class="btn btn-action">
+                    <a href="{$WEB_ROOT}/cart.php?a=view" class="btn">
                         {$LANG.viewcart}
                     </a>
                 </li>
@@ -182,49 +176,29 @@
                                 <a id="btnBuyADomain" href="domainchecker.php">
                                     <i class="fa fa-globe"></i>
                                     <p>
-                                        Register<br>New Domain<span>&raquo;</span>
+                                        {$LANG.buyadomain} <span>&raquo;</span>
                                     </p>
                                 </a>
                             </li>
                         {/if}
                         <li>
-                            <a id="btnOrderHosting" href="cart.php?gid=1">
+                            <a id="btnOrderHosting" href="cart.php">
                                 <i class="fa fa-hdd-o"></i>
                                 <p>
-                                    Buy<br>Web Hosting <span>&raquo;</span>
+                                    {$LANG.orderhosting} <span>&raquo;</span>
                                 </p>
                             </a>
                         </li>
-<!--
                         <li>
-                            <a id="btnGSuite" href="cart.php?gid=2">
-                                <i class="fa fa-google"></i>
+                            <a id="btnMakePayment" href="clientarea.php">
+                                <i class="fa fa-credit-card"></i>
                                 <p>
-                                    Signup<br>G-Suite <span>&raquo;</span>
+                                    {$LANG.makepayment} <span>&raquo;</span>
                                 </p>
                             </a>
                         </li>
--->
                         <li>
-                            <a id="btnBuySSL" href="cart.php?gid=3">
-                                <i class="fa fa-lock"></i>
-                                <p>
-                                    Get a<br>SSL Cert <span>&raquo;</span>
-                                </p>
-                            </a>
-                        </li>
-<!--
-                        <li>
-                            <a id="btnBuySSL" href="cart.php?gid=6">
-                                <i class="fa fa-server"></i>
-                                <p>
-                                    Setup a VPS<span>&raquo;</span>
-                                </p>
-                            </a>
-                        </li>
--->
-                        <li>
-                            <a id="btnGetSupport" href="https://www.geeksontap.com.au/support/">
+                            <a id="btnGetSupport" href="submitticket.php">
                                 <i class="fa fa-envelope-o"></i>
                                 <p>
                                     {$LANG.getsupport} <span>&raquo;</span>
