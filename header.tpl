@@ -189,14 +189,22 @@
                                 </p>
                             </a>
                         </li>
-                        <li>
+                        {* <li>
+                            <a id="btnBuySSL" href="cart.php?gid=3">
+                                <i class="fa fa-lock"></i>
+                                <p>
+                                    Get a<br>SSL Cert <span>&raquo;</span>
+                                </p>
+                            </a>
+                        </li>*}
+                       {* <li>
                             <a id="btnMakePayment" href="clientarea.php">
                                 <i class="fa fa-credit-card"></i>
                                 <p>
-                                    {$LANG.makepayment} <span>&raquo;</span>
+                                   
                                 </p>
                             </a>
-                        </li>
+                        </li>*}
                         <li>
                             <a id="btnGetSupport" href="submitticket.php">
                                 <i class="fa fa-envelope-o"></i>
