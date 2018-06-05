@@ -31,7 +31,7 @@
                     <h3>{$pagetitle}</h3>
 
                 </div>
-                <div class="invoice-col text-center">
+                <div class="invoice-col text-right">
 
                     <div class="invoice-status">
                         {if $status eq "Draft"}

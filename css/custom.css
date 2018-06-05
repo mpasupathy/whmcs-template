@@ -702,7 +702,9 @@ section#header .logo img{
     width:30px;
 }
 
-#Primary_Navbar-Announcements, #Primary_Navbar-Knowledgebase, #Primary_Navbar-Support, #Primary_Navbar-Open_Ticket, #Primary_Navbar-Network_Status,#Primary_Navbar-Store-SSL_Certificates{
+#Primary_Navbar-Announcements, #Primary_Navbar-Knowledgebase, #Primary_Navbar-Support, #Primary_Navbar-Open_Ticket, 
+#Primary_Navbar-Network_Status,#Primary_Navbar-Store-SSL_Certificates,#Secondary_Sidebar-Categories-SSL_Certificates
+{
     display:none;
 }
 

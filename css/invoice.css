@@ -104,7 +104,7 @@ body {
 
 .invoice-container .payment-btn-container {
     margin-top: 5px;
-    text-align: center;
+    text-align: right;
 }
 .invoice-container .payment-btn-container table {
     margin: 0 auto;
